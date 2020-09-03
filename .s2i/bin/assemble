@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Source-to-Image Assemble Script"
+echo "$PWD"
+echo "$PATH"
+
+readonly PIP_VERSION="20.2.2"
+
+mv /tmp/src/* $HOME
+
+echo "---> Upgrading pip to version ${PIP_VERSION}"
+python3 -m pip install "pip==${PIP_VERSION}"
+
+echo "---> Installing requirements.txt"
+python3 -m pip install -r "requirements/requirements.insights.txt"
